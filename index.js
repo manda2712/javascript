@@ -25,6 +25,13 @@
     
 // }
 
-var color = ['red', 'green', 'blue', 'yellow'];
-color.splice(1,2);
-console.log(color);
+// var color = ['red', 'green', 'blue', 'yellow'];
+// color.splice(1,2);
+// console.log(color);
+
+let fruit = ['apel', 'mangga', 'jeruk', 'manggis']
+
+for (let i = 0; i < 3; i++) {
+    console.log(fruit[i]);
+    
+}
