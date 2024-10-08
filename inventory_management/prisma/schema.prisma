@@ -49,7 +49,7 @@ model Transaction {
   item            Item   @relation(fields: [itemId], references: [id])
 }
 
-enum TransactionStatus{
+enum TransactionStatus {
   PENDING
   BORROWED 
   RETURNED
