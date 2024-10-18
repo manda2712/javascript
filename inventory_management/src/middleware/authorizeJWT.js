@@ -3,6 +3,7 @@ const jwt = require ("jsonwebtoken")
 function authorizeJWT(req, res, next) {
     const token = req.headers.authorization
 
+
     if(!token){
         return res.status(401).json({message : 'Tidak ada token! gagal mengakses fitur'})
     }
@@ -17,6 +18,6 @@ function authorizeJWT(req, res, next) {
     }
 }
 
-module.exports = {
+module.exports =
     authorizeJWT
-}
+

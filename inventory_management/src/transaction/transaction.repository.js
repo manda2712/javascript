@@ -12,7 +12,7 @@ async function createTransaction(userId, itemId, quantityBorrowed) {
         })
         return newTransaction
     } catch (error) {
-        throw new Error("Failed to cretae transaction");  
+        throw new Error("Failed to create transaction");  
     }   
 }
 

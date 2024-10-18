@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
+const adminAuthorization = require("./middleware/adminAuthorization")
 
 dotenv.config();
 
@@ -22,11 +23,13 @@ app.use("/api/item", itemController)
 
 //user
 const userController = require("./user/user.controller")
-app.use("/api/user", userController)
+app.use("/api/user", adminAuthorization, userController)
 
 //transaction
 const transactionController = require("./transaction/transaction.controller")
 app.use("/api/transaction", transactionController)
+
+
 
 app.listen(PORT, () => {
     console.log(`App listening on port ` + PORT);

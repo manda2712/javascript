@@ -18,7 +18,7 @@ router.post('/login', async(req, res, next) => {
     const {username, password} = req.body;
     try {
         const {user, token} = await authService.login(username, password);
-        res.status(200).json({data: {username: user.username, role:user.role, token}, massage: "Login Succes"})
+        res.status(200).json({data: {username: user.username, userId : user.userId, role:user.role, token}, massage: "Login Succes"})
     } catch (error) {
         res.status(400).json({error: error.message})   
     }
