@@ -7,9 +7,11 @@ const authorizationAdmin = (req, res, next) =>{
     } 
     
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const splitToken = token.split(' ')[1]
+        const decoded = jwt.verify(splitToken, process.env.JWT_SECRET);
+        console.log("token:", token)
         if (decoded.role !== 'ADMIN') {
-            return res.status(403).json({message: 'Unauthorized'})   
+            return res.status(403).json({message: 'Unauthorized'})  
         }
         next();
     } catch (error) {
