@@ -3,7 +3,8 @@
     "rewrites": [
         { "source": "/(.*)", "destination": "/api" }
     ],
-    "headers" : [
+    
+    "headers": [
         {
             "source": "/(.*)",
             "headers": [
